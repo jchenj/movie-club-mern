@@ -16,11 +16,12 @@ recordRoutes.route("/record").get(function (req, res) {
     let db_connect = dbo.getDb("movies");
     db_connect
         .collection("records")
-        .find({}
+        .find({})
         .toArray(function (err, result) {
             if (err) throw err;
-            res.json(result)
+            res.json(result);
         });
+    });
 
 // Get single record by id
 recordRoutes.route("/record/:id").get(function (req, res) {
@@ -70,7 +71,7 @@ recordRoutes.route("/update/:id").post(function (req, response) {
 });
 
 // Delete a record
-recordRoutes.route("/:id").delete(req, response) => {
+recordRoutes.route("/:id").delete((req, response) => {
     let db_connect = dbo.getDb();
     let myquery = { _id: ObjectId( req.params.id )};
     db_connect.collection("records").deleteOne(myquery, function (err, obj) {

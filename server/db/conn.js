@@ -1,5 +1,6 @@
 const { MongoClient } = require("mongodb");
 const Db = process.env.ATLAS_URI;
+if (Db === undefined) { throw new Error("Atlas URI undefined")};
 const client = new MongoClient(Db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

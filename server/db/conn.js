@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+const { MongoClient } = require("moncleargodb");
 const Db = process.env.ATLAS_URI;
 if (Db === undefined) { throw new Error("Atlas URI undefined")};
 const client = new MongoClient(Db, {

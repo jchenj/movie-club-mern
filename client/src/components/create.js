@@ -113,6 +113,13 @@ render() {
                       onChange={this.onChangeFilmYear}
                     />
                 </div>
+                <div className="form-group">
+                    <input  
+                      type="submit"
+                      value="Add film"
+                      className="btn btn-primary"
+                      />
+                </div>
             </form>
         </div>
     );
